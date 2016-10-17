@@ -21,6 +21,14 @@
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
+yaml_config = File.read("config/deploy.yml")
+deploy_config = YAML.load(yaml_config)
+
+set :host, deploy_config['host']
+# db must be included in order for migrations to be run, even though the database is on a different server in our case.
+# The roles are more about the user than the server if that makes sense.
+server fetch(:host), user: fetch(:user), roles: %w{web app db}
+set :rails_env, "production"
 
 
 # Configuration
@@ -59,3 +67,8 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+set :ssh_options, {
+                    port: deploy_config['port'],
+                    forward_agent: false
+                }

@@ -1,0 +1,6 @@
+Deployed new version of the <%= fetch(:application) %> application to the <%= fetch(:stage) %> server <%= fetch(:host) %> on <%= @now.strftime("%m/%d/%Y") %> at <%= @now.strftime("%I:%M %p") %>:
+
+The following changes are included in the new version:
+<%= fetch(:body) %>
+
+You can view the changes now at https://<%= fetch(:host) %>/<%= fetch(:application) %>
