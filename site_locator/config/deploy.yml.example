@@ -1,0 +1,6 @@
+# If you're for real going to deploy, you'd want to fill in these values appropriately.
+# Host and port for the server you're deploying to, user is the deploy user, repo the base repo address.
+host:
+port:
+user:
+repo:

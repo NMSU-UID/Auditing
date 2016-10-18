@@ -1,0 +1,10 @@
+# If you're deploying for real, put in stuff for that. If not smtp you might have to edit
+# other stuff in the cap_mailer sequence.
+delivery_method: :smtp
+raise_delivery_errors: true
+default_from:
+notify_emails:
+smtp_settings:
+  address:
+  port:
+
