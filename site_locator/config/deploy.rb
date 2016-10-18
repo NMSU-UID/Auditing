@@ -12,6 +12,7 @@ set :human_readable_application_name, 'Site Locator'
 set :user, deploy_config['user']
 set :shared_dir, 'shared'
 set :repo_url, "#{deploy_config['repo']}:#{fetch(:user)}/#{fetch(:application)}.git"
+set :repo_tree, 'site_locator'
 set :tmp_dir, "/home/#{fetch(:user)}/tmp"
 
 # Default branch is :master
